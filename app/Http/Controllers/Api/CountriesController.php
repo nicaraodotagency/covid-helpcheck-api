@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Contracts\CovidRepositoryInterface;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 
-class CountriesController
+class CountriesController extends Controller
 {
     protected $covidRepository;
 

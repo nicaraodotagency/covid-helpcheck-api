@@ -19,7 +19,6 @@ class CovidRepository implements CovidRepositoryInterface
             ]
         );
         $this->baseUrl = config('services.covid.url');
-
     }
 
     public function getAllCountries(): array
