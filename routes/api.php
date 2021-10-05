@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\CountriesController;
+use App\Http\Controllers\Api\HistoryController;
+use App\Http\Controllers\Api\StatisticsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('/countries', [CountriesController::class, 'index']);
+Route::get('/statistics', [StatisticsController::class, 'index']);
+Route::get('/history', [HistoryController::class, 'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
