@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ContinentsController;
 use App\Http\Controllers\Api\CountriesController;
 use App\Http\Controllers\Api\HistoryController;
 use App\Http\Controllers\Api\StatisticsController;
@@ -17,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/continents', [ContinentsController::class, 'index']);
 Route::get('/countries', [CountriesController::class, 'index']);
-Route::get('/countries-by-continent', [CountriesController::class, 'countryByContinents']);
 Route::get('/statistics', [StatisticsController::class, 'index']);
 Route::get('/history', [HistoryController::class, 'index']);
 

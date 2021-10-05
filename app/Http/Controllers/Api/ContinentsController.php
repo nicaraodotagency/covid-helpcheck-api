@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Contracts\CovidRepositoryInterface;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Collection;
 
-class CountriesController extends Controller
+class ContinentsController
 {
     protected $covidRepository;
 
@@ -17,6 +15,8 @@ class CountriesController extends Controller
 
     public function index(): array
     {
-        return $this->covidRepository->getAllCountries();
+        ['response' => $statistics] = $this->covidRepository->getAllStatistics();
+
+        return collect($statistics)->groupBy('continent')->toArray();
     }
 }
