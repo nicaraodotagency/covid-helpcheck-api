@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/countries', [CountriesController::class, 'index']);
+Route::get('/countries-by-continent', [CountriesController::class, 'countryByContinents']);
 Route::get('/statistics', [StatisticsController::class, 'index']);
 Route::get('/history', [HistoryController::class, 'index']);
 

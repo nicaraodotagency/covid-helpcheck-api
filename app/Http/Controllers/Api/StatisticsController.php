@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Contracts\CovidRepositoryInterface;
+use App\Http\Controllers\Controller;
 
-class StatisticsController
+class StatisticsController extends Controller
 {
     protected $covidRepository;
 
