@@ -19,4 +19,11 @@ class CountriesController extends Controller
     {
         return $this->covidRepository->getAllCountries();
     }
+
+    public function findBy($country)
+    {
+        ['response' => $results] = $this->covidRepository->getHistory($country);
+
+        return $results;
+    }
 }

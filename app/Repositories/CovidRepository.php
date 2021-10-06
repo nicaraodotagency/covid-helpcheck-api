@@ -35,10 +35,10 @@ class CovidRepository implements CovidRepositoryInterface
         return $statistics->json();
     }
 
-    public function getHistory(): array
+    public function getHistory(string $country): array
     {
         $statistics = $this->covidClient->get("{$this->baseUrl}/history", [
-            'country' => 'usa',
+            'country' => $country,
             'day' => now()->format('Y-m-d'),
         ]);
 
