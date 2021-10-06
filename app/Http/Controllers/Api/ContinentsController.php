@@ -17,6 +17,10 @@ class ContinentsController
     {
         ['response' => $statistics] = $this->covidRepository->getAllStatistics();
 
-        return collect($statistics)->groupBy('continent')->toArray();
+        $countryFiltered = collect($statistics)->filter(function ($country) {
+            return !empty($country['continent']) && $country['continent'] != 'All';
+        });
+
+        return $countryFiltered->groupBy('continent')->toArray();
     }
 }
