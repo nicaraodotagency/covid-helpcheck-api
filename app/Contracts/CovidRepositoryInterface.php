@@ -8,5 +8,5 @@ interface CovidRepositoryInterface
 
     public function getAllStatistics(): array;
 
-    public function getHistory(): array;
+    public function getHistory(string $country): array;
 }

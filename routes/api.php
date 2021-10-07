@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/continents', [ContinentsController::class, 'index']);
 Route::get('/countries', [CountriesController::class, 'index']);
+Route::get('/countries/{country}', [CountriesController::class, 'show']);
 Route::get('/statistics', [StatisticsController::class, 'index']);
 Route::get('/history', [HistoryController::class, 'index']);
 
